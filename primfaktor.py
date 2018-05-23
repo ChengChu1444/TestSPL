@@ -1,12 +1,12 @@
 # Primzahlen überprüfen
 
-# Sehr ineffizient, aber funktionstüchtig
+# Effizienter als die letzte Methode
 
 def zerlegPrime(wert):
     w = int(wert)
-    counter = w-1
+    counter = 2
     done = False
-    while(counter > 1 and done == False):
+    while(counter <= w and done == False):
         isPrimeF = False
         for i in range(2,counter):
              if(counter % i == 0):
@@ -17,9 +17,7 @@ def zerlegPrime(wert):
                 print(counter)
                 zerlegPrime(w/counter)
                 done = True
-        counter=counter-1
-    if(w-1==1):
-      print(w)
+        counter=counter+1
 
 zahl = input("Geben sie eine Zahl ein ")
 z = int(zahl)
